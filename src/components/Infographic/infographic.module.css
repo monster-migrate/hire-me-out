@@ -1,0 +1,50 @@
+.formInfographic {
+    border-radius: 12px 0px 0px 12px;
+    background-color: var(--violet);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px
+}
+
+.brandHeading {
+    color: var(--white);
+    font-variant: small-caps;
+}
+
+.brandDescription {
+    color: var(--white);
+    font-size: 12px;
+    width: 520px;
+    height: auto;
+}
+
+@media (max-width: 1100px) {
+    .formInfographic {
+        border-radius: 12px 12px 0 0;
+        padding: 24px 12px;
+        min-height: 180px;
+    }
+
+    .brandDescription {
+        width: 100%;
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .formInfographic {
+        display: none;
+        border-radius: 0;
+        padding: 16px 6px;
+        min-height: 120px;
+    }
+
+    .brandDescription {
+        width: 100%;
+        max-width: 100vw;
+        font-size: 11px;
+    }
+}
