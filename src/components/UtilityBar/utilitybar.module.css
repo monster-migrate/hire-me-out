@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+.filterContainer {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.utilContainer {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+
+}

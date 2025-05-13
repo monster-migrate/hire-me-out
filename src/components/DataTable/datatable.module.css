@@ -1,0 +1,22 @@
+.dataTable,
+.dataTableBody {
+    width: auto;
+    padding: 12px;
+}
+
+.dataTableHeader {
+    background-color: var(--violet);
+    border-radius: 20px 20px 0px 0px;
+    padding: 12px;
+    color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.dataTableRow {
+    background-color: transparent;
+    padding: 12px;
+    color: var(--dark-grey);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}

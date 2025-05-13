@@ -3,6 +3,10 @@ import { UserInterface } from "./user.interface";
 
 export const createUser = async (data: UserInterface) => {
     try {
+        const user = await getUserByEmail(data.email);
+        if (user) {
+            throw new Error('Email already exists');
+        }
         return await User.create(data);
     } catch (error) {
         throw new Error(`Error creating user: ${error}`);

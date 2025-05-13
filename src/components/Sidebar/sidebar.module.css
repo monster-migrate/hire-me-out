@@ -1,0 +1,149 @@
+.sidebar {
+    border-right: 1px solid var(--grey);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    width: 250px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.logoContainer {
+    margin-top: 24px;
+    padding: 4px;
+}
+
+.sidebarMenuItemList {
+    padding: 8px 28px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.sidebarMenuItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    gap: 16px;
+    position: relative;
+}
+
+.selectorUI {
+    width: 8px;
+    height: 38px;
+    border-radius: 0px 8px 8px 0px;
+    background-color: var(--violet);
+    left: -16px;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.sidebarMenuItem .selectorUI[style*="opacity: 1"] {
+    opacity: 1;
+}
+
+.logoutBtn {
+    font-size: 16px;
+    outline: none;
+    border: none;
+    background: transparent;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menuTitle {
+    font-size: 14px;
+    color: var(--dark-grey);
+    padding: 12px;
+}
+
+.menuItemText {
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+        width: 75vw;
+        max-width: 320px;
+    }
+
+    .sidebarOpen {
+        transform: translateX(0);
+    }
+}
+
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+.hamburgerBtn {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.hamburgerLine {
+    width: 24px;
+    height: 3px;
+    background-color: var(--dark-grey);
+    border-radius: 2px;
+}
+
+.active {
+    background-color: var(--violet-light, #f3e8ff);
+    color: var(--violet-dark, #6d28d9);
+    border-radius: 8px;
+}
+
+.sidebarMenuItem.active .menuItemText {
+    color: var(--violet-dark, #6d28d9);
+    font-weight: 600;
+}
+
+.sidebarMenuItem.active .selectorUI {
+    opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+    .hamburgerBtn {
+        display: flex;
+        z-index: 1100;
+    }
+}
+
+@media (min-width: 769px) {
+    .sidebarOpen {
+        transform: none !important;
+    }
+}

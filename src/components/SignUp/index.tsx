@@ -6,7 +6,7 @@ import SignUpForm from "../SignUpForm";
 export default function SignUp() {
     return (
         <div className={`${nunito.className} ${styles.container}`}>
-            <Logo />
+            <Logo size={24}/>
             <div className={`${styles.formContainer}`}>
                 <Infographic />
                 <SignUpForm />

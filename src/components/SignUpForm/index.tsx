@@ -4,6 +4,7 @@ import SignUpErrors from "@/lib/types/SignUpErrors";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "./signup.module.css";
+import PasswordInput from "../PasswordInput";
 export default function SignUpForm() {
     const [fullname, setFullname] = useState("");
     const [email, setEmail] = useState("");
@@ -57,8 +58,13 @@ export default function SignUpForm() {
         });
         const data = await response.json();
         if (data.errors) {
-            setError(data.errors[0].extensions.exception.errors);
-            console.log(data.errors[0].extensions.exception.errors)
+            const graphqlErrors = data.errors[0]?.extensions?.exception?.errors;
+            if (graphqlErrors && typeof graphqlErrors === 'object') {
+                setError(graphqlErrors as SignUpErrors);
+            } else {
+                setError({ form: 'An unexpected error occurred. Please try again.' });
+            }
+
             setLoading(false);
             return;
         }
@@ -116,14 +122,7 @@ export default function SignUpForm() {
                                 color: 'var(--red)',
                             }}>*</span>
                         </label>
-                        <input
-                            type="password"
-                            name="password"
-                            className={`${styles.input}`}
-                            placeholder="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
+                        <PasswordInput password={password} setPassword={setPassword} placeholder="Password" />
                         <p className={styles.formError}>
                             {error?.password ?? '\u00A0'}
                         </p>
@@ -135,16 +134,12 @@ export default function SignUpForm() {
                                 color: 'var(--red)',
                             }}>*</span>
                         </label>
-                        <input
-                            type="password"
-                            name="confirmpassword"
-                            className={`${styles.input}`}
-                            placeholder="Confirm Password"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                        />
+                        <PasswordInput password={confirmPassword} setPassword={setConfirmPassword} placeholder="Confirm Password" />
                         <p className={styles.formError}>
                             {error?.confirmPassword ?? '\u00A0'}
+                        </p>
+                        <p className={styles.formError}>
+                            {error?.form ?? '\u00A0'}
                         </p>
                     </div>
                     <div style={{

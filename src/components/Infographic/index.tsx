@@ -3,15 +3,15 @@ import Image from "next/image";
 export default function Infographic() {
     return (
         <div className={styles.formInfographic}>
-            <Image src="/assets/infographic.png" width={520} height={284} alt="inffographic" />
+            <Image src="/assets/infographic.png" width={520} height={284} alt="infographic" />
             <p className={`${styles.brandHeading}`}>
-                Showcase Your Skills. Get Noticed. And we will Hire You Out.
+                Discover Top Talent. Simplify Hiring. Hire Them Out.
             </p>
             <p className={`${styles.brandDescription}`}>
-                Join our platform to connect with recruiters actively
-                seeking talented professionals. Create your profile,
-                highlight your strengths, and open doors to new career
-                opportunities — all in one place.</p>
+                Join our platform designed exclusively for HR professionals and
+                recruiters. Manage candidate profiles, track hiring progress,
+                and streamline your recruitment workflow — all from a single,
+                secure dashboard.</p>
         </div>
     )
 }

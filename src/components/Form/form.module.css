@@ -1,0 +1,36 @@
+.container {
+    border-radius: 12px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 20px 0px;
+}
+
+.heading {
+    width: 100%;
+    text-align: center;
+    background-color: var(--violet);
+    color: var(--white);
+    padding: 12px 0px;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.description {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+}
+
+.form {
+    width: 50vw;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.fullWidth {
+    grid-column: span 2;
+}

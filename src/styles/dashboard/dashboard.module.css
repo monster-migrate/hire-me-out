@@ -1,0 +1,27 @@
+.container {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: inherit;
+    overflow: hidden;
+  }
+  
+  .content {
+    margin-left: 250px;
+    width: calc(100vw - 250px);
+    height: 100vh;
+    overflow-y: auto;
+    background: #fff;
+    color: var(--dark-grey);
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      margin-left: 0;
+      margin-top: 48px;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+  
